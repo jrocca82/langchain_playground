@@ -1,5 +1,5 @@
+# This file requires openai 0.28.0
 import openai
-from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import os
 
@@ -8,16 +8,6 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
 openai.api_key = api_key
-
-# client = openai.Client()
-
-# response = client.completions.create(
-#     model='davinci-002', # This model sux lol wut
-#     prompt='What is machine learning?',
-#     max_tokens=300
-# )
-
-# print(response.choices[0].text)
 
 def get_chat_completion(user_prompt):
     response = openai.ChatCompletion.create(
